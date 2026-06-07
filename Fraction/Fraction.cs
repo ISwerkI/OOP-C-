@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -69,6 +70,25 @@ namespace Fraction
         {
             return left * right.Inverted();
         }
+        public static Fraction operator++(Fraction obj)
+        {
+            obj.Integer++;
+            return obj;
+        }
+
+        public static bool operator==(Fraction l, Fraction r)
+        {
+            Fraction left = new Fraction(l);
+            Fraction right = new Fraction(r);
+            left.ToImproper();
+            right.ToImproper();
+            return left.Numerator * right.Denominator == right.Numerator * left.Denominator;
+        }
+        public static bool operator !=(Fraction left, Fraction right)
+        {
+            return !(left == right);
+        }
+         
         //                  Methods
         Fraction Inverted()
         {
