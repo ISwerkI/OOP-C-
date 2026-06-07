@@ -16,7 +16,7 @@ namespace OOP
             A.SetY(10);
             Console.WriteLine($"X = {A.GetX()}, Y = {A.GetY()}");*/
             A.Print();
-            Point B = new Point(5, 7);
+            Point B = new Point(7, 8);
             Console.WriteLine(A.Distance(B));
 
         }
